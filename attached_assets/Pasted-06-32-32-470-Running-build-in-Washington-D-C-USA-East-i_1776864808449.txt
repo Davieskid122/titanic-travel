@@ -1,0 +1,36 @@
+06:32:32.470 Running build in Washington, D.C., USA (East) – iad1
+06:32:32.471 Build machine configuration: 2 cores, 8 GB
+06:32:32.593 Cloning github.com/Davieskid122/AndrewtheAnalyst (Branch: master, Commit: 7fcf5f0)
+06:32:32.594 Previous build caches not available.
+06:32:32.819 Cloning completed: 225.000ms
+06:32:33.139 Running "vercel build"
+06:32:33.890 Vercel CLI 51.6.1
+06:32:34.431 Warning: Detected "engines": { "node": ">=18" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: https://vercel.link/node-version
+06:32:34.436 Installing dependencies...
+06:32:56.211 
+06:32:56.211 added 96 packages in 22s
+06:32:56.211 
+06:32:56.212 15 packages are looking for funding
+06:32:56.212   run `npm fund` for details
+06:32:56.359 
+06:32:56.359 > andrewtheanalyst-portfolio@0.0.0 build
+06:32:56.360 > vite build
+06:32:56.360 
+06:32:56.671 [36mvite v7.3.2 [32mbuilding client environment for production...[36m[39m
+06:32:56.755 transforming...
+06:32:56.786 [32m✓[39m 3 modules transformed.
+06:32:56.787 [31m✗[39m Build failed in 83ms
+06:32:56.787 [31merror during build:
+06:32:56.787 [31m[@tailwindcss/vite:generate:build] Can't resolve 'tw-animate-css' in '/vercel/path0/src'[31m
+06:32:56.788 file: [36m/vercel/path0/src/index.css[31m
+06:32:56.788     at finishWithoutResolve (/vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:587:18)
+06:32:56.788     at /vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:679:14
+06:32:56.788     at /vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:740:5
+06:32:56.788     at eval (eval at create (/vercel/path0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+06:32:56.788     at /vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:740:5
+06:32:56.789     at eval (eval at create (/vercel/path0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+06:32:56.789     at /vercel/path0/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+06:32:56.789     at /vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:740:5
+06:32:56.789     at eval (eval at create (/vercel/path0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+06:32:56.789     at /vercel/path0/node_modules/enhanced-resolve/lib/Resolver.js:740:5[39m
+06:32:56.811 Error: Command "npm run build" exited with 1

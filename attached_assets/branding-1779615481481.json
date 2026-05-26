@@ -1,0 +1,133 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Montserrat",
+      "role": "body"
+    },
+    {
+      "family": "Cinzel",
+      "role": "heading"
+    },
+    {
+      "family": "Azonix",
+      "role": "display"
+    }
+  ],
+  "colors": {
+    "primary": "#1C398E",
+    "accent": "#1C398E",
+    "background": "#17181B",
+    "textPrimary": "#17181B",
+    "link": "#1C398E"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Montserrat",
+      "heading": "Cinzel"
+    },
+    "fontStacks": {
+      "heading": [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ],
+      "body": [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ],
+      "paragraph": [
+        "Montserrat"
+      ]
+    },
+    "fontSizes": {
+      "h1": "60px",
+      "h2": "20px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#FFFFFF",
+      "borderColor": null,
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#111214",
+      "textColor": "#FFFFFF",
+      "borderColor": "#5D5D5F",
+      "borderRadius": "33554400px",
+      "borderRadiusCorners": {
+        "topLeft": "33554400px",
+        "topRight": "33554400px",
+        "bottomRight": "33554400px",
+        "bottomLeft": "33554400px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": "File saved at: attached_assets/favicon.svg",
+    "ogImage": null
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Send Message →",
+      "reasoning": "The 'Send Message →' button is likely the primary CTA due to its action-oriented text, which suggests initiating contact or communication, a common primary action on portfolio sites."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Whatsapp",
+      "reasoning": "The 'Whatsapp' button serves as a secondary contact method, which is typically less emphasized than a direct message option."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "potential clients or employers"
+  },
+  "designSystem": {
+    "framework": "tailwind",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": false,
+      "llmSucceeded": false,
+      "finalSource": "none"
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

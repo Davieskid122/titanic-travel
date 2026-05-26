@@ -1,0 +1,46 @@
+Project cards display text and metrics only — no dashboard screenshots or preview images. Render the four cards as a **horizontal scroll carousel**. Cards sit side by side; the user scrolls horizontally to browse them. The carousel must support both desktop and mobile.
+
+**Carousel Auto-Scroll Behavior:**
+
+- Auto-scroll through the cards in a continuous loop. After the fourth card (Investment Intelligence), seamlessly loop back to the first card (Revenue Command).
+- When the user drags or swipes a card manually, auto-scroll pauses.
+- Auto-scroll resumes automatically after 5 seconds of inactivity (no dragging).
+- User can grab and drag any card manually at any time to override auto-scroll.
+
+**Mobile Carousel Behavior:** On mobile, display one card at a time with approximately 10-20% of the next card visible at the edge to signal scrollability.
+
+**Project 1 — Revenue Command Dashboard**
+Tag: B2B Sales
+Link: [https://sales-intel.andrewtheanalyst.org](https://sales-intel.andrewtheanalyst.org)
+Description: B2B sales analysis across 307 orders, 92 customers, and 19 countries — surfacing where revenue is concentrated, what is at risk, and where the next dollar should be spent.
+Key finding: $194K in cancelled orders identified, with root causes traceable to three fulfilment patterns that could be operationally resolved.
+Metrics: $10.03M total revenue · 92 customers · 19 countries
+CTA: "View Live Dashboard" (opens in new tab)
+
+**Project 2 — RavenStack Churn Analytics**
+Tag: SaaS · Retention
+Link: [https://revenue-churn-analysis.andrewtheanalyst.org](https://revenue-churn-analysis.andrewtheanalyst.org)
+Description: Subscription churn intelligence across plan tiers, feature usage, and support behaviour — ranked by business impact so retention teams know exactly where to act first.
+Key finding: 67 no-auto-renew accounts holding $204K MRR identified before their renewal windows, with a prioritized intervention playbook.
+Metrics: $204K revenue at risk · 3 data sources · 6 action items
+CTA: "View Live Dashboard" (opens in new tab)
+
+**Project 3 — Customer Lifetime Value Segmentation**
+Tag: E-Commerce · CLV
+Link: [https://customer-value-segmentation.andrewtheanalyst.org](https://customer-value-segmentation.andrewtheanalyst.org)
+Description: Statistical CLV modelling across 4,170 customers using BG/NBD and Gamma-Gamma models — predicting future value per customer and allocating retention budget where it generates the highest ROI.
+Key finding: 1,154 customers with spend 40%+ below personal baseline flagged, with a win-back ROI calculator built directly into the dashboard.
+Metrics: $54M portfolio value · 4,170 customers · 73% Pareto ratio
+CTA: "View Live Dashboard" (opens in new tab)
+
+**Project 4 — Macro Market Sentiment & Sector Rotation**
+Tag: Investment Intelligence
+Link: [https://macro-market.andrewtheanalyst.org](https://macro-market.andrewtheanalyst.org)
+Description: Live macroeconomic data from the U.S. Federal Reserve (FRED) — classifying the current market regime and identifying which sectors to overweight or underweight based on where we are in the economic cycle.
+Key finding: Live regime classification with historical stress-testing against 1994, 2000, 2008, 2020, and 2022 — so the thesis can be validated before capital is deployed.
+Metrics: 4 live FRED feeds · 11 sector ETFs · 10-year historical range
+CTA: "View Live Dashboard" (opens in new tab)
+
+The fourth project card must use a visually distinct orange or amber accent to signal it serves a different audience from the other three.
+
+---

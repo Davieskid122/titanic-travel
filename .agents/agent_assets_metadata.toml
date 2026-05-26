@@ -1,0 +1,145 @@
+uploads = []
+
+[[generated]]
+id = "dgk8PGrVD2GssTXcyV8wW"
+uri = "file://artifacts/titanic-travel/public/images/hero-bg.png"
+type = "image"
+title = "Airplane soaring over ocean"
+
+[[generated]]
+id = "hnqsjpMsJLK-vlBChr-Yu"
+uri = "file://artifacts/titanic-travel/public/images/dest-ny.png"
+type = "image"
+title = "New York destination"
+
+[[generated]]
+id = "BmDDyVveH_KJd5A65dd5k"
+uri = "file://artifacts/titanic-travel/public/images/dest-la.png"
+type = "image"
+title = "Los Angeles destination"
+
+[[generated]]
+id = "oDv86lVfN3JUaQcfjILGL"
+uri = "file://artifacts/titanic-travel/public/images/dest-dubai.png"
+type = "image"
+title = "Dubai destination"
+
+[[generated]]
+id = "ODMl50Akxz4Gu8hYrHTlN"
+uri = "file://artifacts/titanic-travel/public/images/dest-barbados.png"
+type = "image"
+title = "Barbados destination"
+
+[[generated]]
+id = "PYYpFPV0yj9F6d3Dd3OOK"
+uri = "file://artifacts/titanic-travel/public/images/cabin-upper.png"
+type = "image"
+title = "Upper class cabin"
+
+[[generated]]
+id = "NVtjKL-djnUmRE0n9uIyM"
+uri = "file://artifacts/titanic-travel/public/images/explore-1.png"
+type = "image"
+title = "Travel inspiration image"
+
+[[generated]]
+id = "mFTAR1cGcY-yONnE0DRSK"
+uri = "file://artifacts/titanic-travel/public/images/dest-miami.png"
+type = "image"
+title = "Miami destination"
+
+[[generated]]
+id = "TUHP8m7YVNvcGa7UEL-3y"
+uri = "file://artifacts/titanic-travel/public/images/dest-johannesburg.png"
+type = "image"
+title = "Johannesburg destination"
+
+[[generated]]
+id = "rH_HWII4aRdrCGm5lzCkR"
+uri = "file://artifacts/titanic-travel/public/images/dest-mumbai.png"
+type = "image"
+title = "Mumbai destination"
+
+[[generated]]
+id = "GvnMYSn3TkgsbxIbpJVEl"
+uri = "file://artifacts/titanic-travel/public/images/dest-hongkong.png"
+type = "image"
+title = "Hong Kong destination"
+
+[[generated]]
+id = "SjRJrw3rc1EzidEPWAvFj"
+uri = "file://artifacts/titanic-travel/public/images/cabin-premium.png"
+type = "image"
+title = "Premium cabin"
+
+[[generated]]
+id = "RcmTypBsjf5sJ_u86XzDG"
+uri = "file://artifacts/titanic-travel/public/images/cabin-economy.png"
+type = "image"
+title = "Economy cabin"
+
+[[generated]]
+id = "H13SWt1Vqy13I9vFmRAC9"
+uri = "file://artifacts/titanic-travel/public/images/explore-2.png"
+type = "image"
+title = "Travel inspiration 2"
+
+[[generated]]
+id = "tm4HsIkjx9nQ7XHGI6Tdp"
+uri = "file://artifacts/titanic-travel/public/images/explore-3.png"
+type = "image"
+title = "Travel inspiration 3"
+
+[[outputs]]
+id = "xFp2idCxbXYsWgtG0M0Qy"
+uri = "file://analyst-portfolio-src.tar.gz"
+type = "unspecified"
+title = "Portfolio Source Code"
+
+[[outputs]]
+id = "Cl5ABjMS2uagVXMfVNErP"
+uri = "file://andrewtheanalyst-portfolio.tar.gz"
+type = "unspecified"
+title = "andrewtheanalyst-portfolio (Vercel-ready)"
+
+[[outputs]]
+id = "IbsosalkCkPoGzyW9pyRz"
+uri = "file://andrewtheanalyst-portfolio.zip"
+type = "unspecified"
+title = "andrewtheanalyst-portfolio.zip (v24)"
+
+[[outputs]]
+id = "wjDgP-ei9JssWqXab7CQR"
+uri = "file://emporio-pizzeria-screenshot.png"
+type = "image"
+title = "Emporio Pizzeria - X post image"
+
+[[outputs]]
+id = "1BzEM_w4uEAk8I5QJIghm"
+uri = "file://emporio-pizzeria-xpost.png"
+type = "image"
+title = "Emporio Pizzeria - X post image"
+
+[[outputs]]
+id = "tis08zEB3khEWQ3ADlBs7"
+uri = "file://DEPLOYMENT_GUIDE.md"
+type = "text"
+title = "VSCode + Vercel Deployment Guide"
+
+[[outputs]]
+id = "IA6epzoo4b7X7cqEO3PG2"
+uri = "file://titanic-travel.tar.gz"
+type = "unspecified"
+title = "Titanic Travel — Full Source Code"
+
+[[outputs]]
+id = "sKAE-dqzcXUG7BAFtvrNz"
+uri = "file://titanic-travel-v2.tar.gz"
+type = "unspecified"
+title = "Titanic Travel v2 — Full Source Code (with emails)"
+
+[[outputs]]
+id = "5p3EvNWXeJNz2RCbH_RlI"
+uri = "file://titanic-travel.zip"
+type = "unspecified"
+title = "Titanic Travel — Full Source Code (.zip)"

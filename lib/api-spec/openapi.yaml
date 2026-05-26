@@ -1,0 +1,491 @@
+openapi: 3.1.0
+info:
+  title: Api
+  version: 0.1.0
+  description: Titanic Travel API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: flights
+    description: Flight search and details
+  - name: bookings
+    description: Booking management
+  - name: users
+    description: User profile management
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /flights/search:
+    get:
+      operationId: searchFlights
+      tags: [flights]
+      summary: Search available flights
+      parameters:
+        - name: origin
+          in: query
+          schema:
+            type: string
+        - name: destination
+          in: query
+          schema:
+            type: string
+        - name: departDate
+          in: query
+          schema:
+            type: string
+        - name: returnDate
+          in: query
+          schema:
+            type: ["string", "null"]
+        - name: passengers
+          in: query
+          schema:
+            type: string
+        - name: cabinClass
+          in: query
+          schema:
+            type: string
+        - name: tripType
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of matching flights
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Flight"
+
+  /flights/popular:
+    get:
+      operationId: getPopularRoutes
+      tags: [flights]
+      summary: Get popular flight routes
+      responses:
+        "200":
+          description: List of popular routes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PopularRoute"
+
+  /flights/{id}:
+    get:
+      operationId: getFlight
+      tags: [flights]
+      summary: Get a flight by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Flight details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flight"
+        "404":
+          description: Flight not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /bookings:
+    get:
+      operationId: getMyBookings
+      tags: [bookings]
+      summary: Get current user's bookings
+      responses:
+        "200":
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Booking"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    post:
+      operationId: createBooking
+      tags: [bookings]
+      summary: Create a new flight booking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBookingBody"
+      responses:
+        "201":
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /bookings/{reference}:
+    get:
+      operationId: getBookingByReference
+      tags: [bookings]
+      summary: Get a booking by reference code
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Booking not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /bookings/{id}/cancel:
+    patch:
+      operationId: cancelBooking
+      tags: [bookings]
+      summary: Cancel a booking
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Booking cancelled
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Booking not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /users/profile:
+    get:
+      operationId: getUserProfile
+      tags: [users]
+      summary: Get current user profile
+      responses:
+        "200":
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    patch:
+      operationId: updateUserProfile
+      tags: [users]
+      summary: Update current user profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateUserProfileBody"
+      responses:
+        "200":
+          description: Updated user profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+
+    Flight:
+      type: object
+      properties:
+        id:
+          type: integer
+        flightNumber:
+          type: string
+        origin:
+          type: string
+        originCode:
+          type: string
+        destination:
+          type: string
+        destinationCode:
+          type: string
+        departDate:
+          type: string
+        departTime:
+          type: string
+        arriveTime:
+          type: string
+        duration:
+          type: string
+        cabinClass:
+          type: string
+        price:
+          type: number
+        seatsAvailable:
+          type: integer
+        aircraft:
+          type: string
+        imageUrl:
+          type: ["string", "null"]
+      required:
+        - id
+        - flightNumber
+        - origin
+        - originCode
+        - destination
+        - destinationCode
+        - departDate
+        - departTime
+        - arriveTime
+        - duration
+        - cabinClass
+        - price
+        - seatsAvailable
+        - aircraft
+        - imageUrl
+
+    PopularRoute:
+      type: object
+      properties:
+        origin:
+          type: string
+        originCode:
+          type: string
+        destination:
+          type: string
+        destinationCode:
+          type: string
+        fromPrice:
+          type: number
+        imageUrl:
+          type: string
+      required:
+        - origin
+        - originCode
+        - destination
+        - destinationCode
+        - fromPrice
+        - imageUrl
+
+    Passenger:
+      type: object
+      properties:
+        id:
+          type: integer
+        bookingId:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+        seatNumber:
+          type: ["string", "null"]
+      required:
+        - id
+        - bookingId
+        - firstName
+        - lastName
+        - title
+        - type
+        - seatNumber
+
+    Booking:
+      type: object
+      properties:
+        id:
+          type: integer
+        reference:
+          type: string
+        userId:
+          type: string
+        flightId:
+          type: integer
+        status:
+          type: string
+        cabinClass:
+          type: string
+        totalPrice:
+          type: number
+        flight:
+          $ref: "#/components/schemas/Flight"
+        passengers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Passenger"
+        createdAt:
+          type: string
+      required:
+        - id
+        - reference
+        - userId
+        - flightId
+        - status
+        - cabinClass
+        - totalPrice
+        - flight
+        - passengers
+        - createdAt
+
+    CreateBookingBody:
+      type: object
+      properties:
+        flightId:
+          type: integer
+        cabinClass:
+          type: string
+        passengers:
+          type: array
+          items:
+            $ref: "#/components/schemas/CreatePassengerBody"
+      required:
+        - flightId
+        - cabinClass
+        - passengers
+
+    CreatePassengerBody:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+      required:
+        - firstName
+        - lastName
+        - title
+        - type
+
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+        clerkId:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: ["string", "null"]
+        flyingClubNumber:
+          type: ["string", "null"]
+        flyingClubMiles:
+          type: integer
+        createdAt:
+          type: string
+      required:
+        - id
+        - clerkId
+        - firstName
+        - lastName
+        - email
+        - phone
+        - flyingClubNumber
+        - flyingClubMiles
+        - createdAt
+
+    UpdateUserProfileBody:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phone:
+          type: string

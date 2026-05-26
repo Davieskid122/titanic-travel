@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Titanic Travel"
+version = "1.0.0"
+id = "artifacts/titanic-travel"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21942
+
+[services.development]
+run = "pnpm --filter @workspace/titanic-travel run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/titanic-travel", "run", "build" ]
+publicDir = "artifacts/titanic-travel/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21942"
+BASE_PATH = "/"
